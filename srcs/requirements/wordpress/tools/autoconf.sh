@@ -1,4 +1,5 @@
-sleep 10
+echo "waiting for mariadb"
+sleep 15
 
 if [ -f "$WP_PATH"/wp-config.php ];
   then
