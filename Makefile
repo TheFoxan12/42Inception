@@ -11,16 +11,16 @@
 # **************************************************************************** #
 
 start:
-	@mkdir -p /home/tunsinge/data/mariadb
-	@mkdir -p /home/tunsinge/data/wordpress
+	@mkdir -p /home/login/data/mariadb
+	@mkdir -p /home/login/data/wordpress
 	@docker compose -f ./srcs/docker-compose.yml up -d --build
 
 stop:
 	@docker compose -f ./srcs/docker-compose.yml down
 
 clean: stop
-	@rm -rf /home/tunsinge/data/mariadb
-	@rm -rf /home/tunsinge/data/wordpress
+	@rm -rf /home/login/data/mariadb
+	@rm -rf /home/login/data/wordpress
 	@docker system prune -f
 	@docker image prune -af
 	@docker volume rm srcs_wordpress
