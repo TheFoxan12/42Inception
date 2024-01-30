@@ -9,9 +9,9 @@ RUN apt install -y curl
 
 RUN mkdir -p /etc/nginx/ssl
 RUN chmod 700 /etc/nginx/ssl
-RUN openssl req -x509 -nodes -out /etc/nginx/ssl/inception.crt -keyout /etc/nginx/ssl/inception.key -subj "/C=FR/ST=GE/L=Mulhouse/O=42/OU=42/CN=tunsinge.42.fr/UID=tunsinge"
+RUN openssl req -x509 -nodes -out /etc/nginx/ssl/inception.crt -keyout /etc/nginx/ssl/inception.key -subj "/C=PAYS/ST=REGION/L=VILLE/O=ORGANISATION/OU=JSP/CN=login.42.fr/UID=login"
 
-COPY conf/tunsinge.42.fr.conf /etc/nginx/sites-enabled/
+COPY conf/login.42.fr.conf /etc/nginx/sites-enabled/
 
 RUN rm /etc/nginx/sites-enabled/default
 
