@@ -11,20 +11,18 @@
 # **************************************************************************** #
 
 start:
-#	@mkdir -p /home/tunsinge/data/mariadb
-#	@mkdir -p /home/tunsinge/data/wordpress
-	@mkdir -p ./data/mariadb
-	@mkdir -p ./data/wordpress
+	@mkdir -p /home/tunsinge/data/mariadb
+	@mkdir -p /home/tunsinge/data/wordpress
+	@chown -R tunsinge /home/tunsinge/data/wordpress
+	@chown -R tunsinge /home/tunsinge/data/mariadb
 	@docker compose -f ./srcs/docker-compose.yml up -d --build
 
 stop:
 	@docker compose -f ./srcs/docker-compose.yml down
 
 clean: stop
-#	@rm -rf /home/tunsinge/data/mariadb
-#	@rm -rf /home/tunsinge/data/wordpress
-	@rm -rf ./data/mariadb
-	@rm -rf ./data/wordpress
+	@rm -rf /home/tunsinge/data/mariadb
+	@rm -rf /home/tunsinge/data/wordpress
 	@docker system prune -f
 	@docker image prune -af
 	@docker volume rm srcs_wordpress
