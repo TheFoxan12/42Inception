@@ -13,8 +13,6 @@
 start:
 	@mkdir -p /home/tunsinge/data/mariadb
 	@mkdir -p /home/tunsinge/data/wordpress
-	@chown -R tunsinge /home/tunsinge/data/wordpress
-	@chown -R tunsinge /home/tunsinge/data/mariadb
 	@docker compose -f ./srcs/docker-compose.yml up -d --build
 
 stop:
